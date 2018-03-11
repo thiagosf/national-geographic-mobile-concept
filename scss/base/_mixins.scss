@@ -6,3 +6,16 @@
     padding: 0;
   }
 }
+
+@mixin header-icon {
+  display: block;
+  color: white;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 16px;
+  padding: 12px;
+  .svg-icon {
+    vertical-align: top;
+  }
+}

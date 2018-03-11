@@ -6,9 +6,14 @@ Challange **National Geographic Mobile Concept**
 
 ![National Geographic Mobile Concept](screenshots/national.jpg)
 
+## Libs
+
+- [Javascript Vanilla](http://vanilla-js.com)
+- [Tiny Slider](https://github.com/ganlanyuan/tiny-slider)
+
 ## TODO
 
-- [ ] Home page mobile
+- [x] Home page mobile
 - [ ] Home page tablet
 - [ ] Home page desktop
 

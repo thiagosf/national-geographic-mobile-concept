@@ -17,16 +17,16 @@
         </li>
       </ul>
     </div>
+    <div class="home-slider-thumbs">
+      <ul>
+        {% for item in [1, 2, 3, 4, 5] %}<li data-id="{{ item }}">
+            <a href="#">
+              <img src="images/home-slider-mobile-{{ item }}.jpg">
+            </a>
+          </li>{% endfor %}
+      </ul>
+    </div>
     <div class="home-slider">
-      <div class="home-slider-thumbs">
-        <ul>
-          {% for item in [1, 2, 3, 4, 5] %}<li data-id="{{ item }}">
-              <a href="#">
-                <img src="images/home-slider-mobile-{{ item }}.jpg">
-              </a>
-            </li>{% endfor %}
-        </ul>
-      </div>
       {% for item in [1, 2, 3, 4, 5] %}
         <div class="home-slider-item {% if item === 1 %}active{% endif %}" style="background-image: url(
           images/home-slider-mobile-{{ item }}.jpg)" data-id="{{ item }}">

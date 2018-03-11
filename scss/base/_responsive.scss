@@ -2,20 +2,20 @@ $screen-xs-max: 480;
 $screen-sm-max: 768;
 $screen-md-max: 1024;
 
-$small-down: "(max-width: #{$screen-xs-max + 1})";
+$small-down: "(max-width: #{$screen-xs-max + 1}px)";
 
 // < 768px
-$medium-down: "(max-width: #{$screen-sm-max + 1})";
+$medium-down: "(max-width: #{$screen-sm-max + 1}px)";
 
 // >= 768px
-$medium-up: "(min-width: #{$screen-xs-max + 1})";
-$medium-only: "(min-width: #{$screen-xs-max + 1}) and (max-width: #{$screen-sm-max})";
+$medium-up: "(min-width: #{$screen-xs-max + 1}px)";
+$medium-only: "(min-width: #{$screen-xs-max + 1}px) and (max-width: #{$screen-sm-max}px)";
 
 // >= 992px
-$large-up: "(min-width: #{$screen-sm-max + 1})";
+$large-up: "(min-width: #{$screen-sm-max + 1}px)";
 
 // >= 1200px
-$xlarge-up: "(min-width: #{$screen-md-max + 1})";
+$xlarge-up: "(min-width: #{$screen-md-max + 1}px)";
 
 // >= 1366px
 $xxlarge-up: "(min-width: 1366px)";
@@ -24,4 +24,4 @@ $xxlarge-up: "(min-width: 1366px)";
 $xxxlarge-up: "(min-width: 1920px)";
 
 // Nav break
-$nav-break: "(max-width: #{$screen-sm-max})";
+$nav-break: "(max-width: #{$screen-sm-max}px)";

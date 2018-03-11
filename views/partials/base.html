@@ -13,13 +13,69 @@
     <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/> -->
   </head>
   <body>
+    <div class="mobile-menu">
+      <a href="#" class="close-menu">
+        {{ "close" | icon | safe }}
+      </a>
+      <div class="wrapper">
+        <nav class="main-menu-mobile">
+          <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Photography</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="#">Science</a></li>
+            <li><a href="#">Travel</a></li>
+            <li><a href="#">Adventure</a></li>
+            <li><a href="#">Animals</a></li>
+            <li><a href="#">Environment</a></li>
+            <li><a href="#">History</a></li>
+            <li><a href="#">Culture</a></li>
+          </ul>
+        </nav>
+        <div class="social-networks">
+          <ul>
+            <li>
+              <a href="#">
+                {{ "facebook" | icon | safe }}
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                {{ "twitter" | icon | safe }}
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                {{ "instagram" | icon | safe }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+    <div class="search-box">
+      <div class="wrapper">
+        <form action="#">
+          <input type="text" placeholder="explore">
+          <button type="submit">
+            {{ "zoom" | icon | safe }}
+          </button>
+        </form>
+      </div>
+    </div>
     <header class="main-header">
       <div class="wrapper">
         <a href="/" class="logo">
           {{ "logo" | icon | safe }}
         </a>
         <a href="#" class="open-search">
-          {{ "zoom" | icon | safe }}
+          <span class="open">
+            {{ "zoom" | icon | safe }}
+          </span>
+          <span class="close">
+            {{ "close" | icon | safe }}
+          </span>
         </a>
         <a href="#" class="open-menu">
           {{ "menu" | icon | safe }}

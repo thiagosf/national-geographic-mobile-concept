@@ -1,0 +1,104 @@
+.mobile-menu {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  width: 55%;
+  transition: transform 500ms $ease-out-expo;
+  transform: translateX(100%);
+  .close-menu {
+    @include header-icon;
+    color: black;
+    position: absolute;
+    top: 26px;
+    right: 18px;
+  }
+  .wrapper {
+    position: absolute;
+    top: 80px;
+    right: 28px;
+    left: 0px;
+    bottom: 28px;
+    overflow: auto;
+    .main-menu-mobile {
+      ul {
+        @include ul-reset;
+        text-align: right;
+        li {
+          display: block;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: $color-yellow;
+            transform: translateY(-50%);
+          }
+          &.active {
+            &::before {
+              width: 100%;
+            }
+          }
+          a {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            font-weight: $font-weight-bold;
+            font-size: 14px;
+            padding: 5px 0 5px 10px;
+            text-transform: uppercase;
+            background: white;
+          }
+        }
+      }
+    }
+    .social-networks {
+      margin-top: 20px;
+      ul {
+        @include ul-reset;
+        text-align: right;
+        li {
+          display: inline-block;
+          a {
+            width: 26px;
+            height: 26px;
+            display: inline-block;
+            color: black;
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  z-index: 99;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  background: black;
+  opacity: 0;
+  transition: opacity 500ms $ease-out-expo;
+  transform: translateX(100%);
+}
+
+body.mobile-menu-opened {
+  .mobile-menu { 
+    transform: translateX(0%);
+  }
+  .mobile-menu-overlay {
+    transform: translateX(0%);
+    opacity: .5;
+  }
+}

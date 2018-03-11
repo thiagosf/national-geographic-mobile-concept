@@ -6,7 +6,7 @@
   bottom: 0;
   background: #333;
   overflow: hidden;
-  border: 10px solid white;
+  border: 8px solid white;
   &::after {
     content: "";
     position: absolute;
@@ -26,29 +26,29 @@
     background-size: cover;
     opacity: 0;
     transition: all 500ms;
-    transform: scale(0.9, 0.9);
+    transform: scale(0.95);
     &.active {
       transform: scale(1);
       opacity: 1;
     }
     &.leaving {
       opacity: 0;
-      transform: scale(1.1, 1.1);
+      transform: scale(1.05);
     }
     &.entering {
-      transition-delay: 200ms;
-      transform: scale(1, 1);
+      transition-delay: 100ms;
+      transform: scale(1);
       opacity: 1;
     }
     .home-slider-item-description {
       position: absolute;
       z-index: 2;
-      top: 30%;
+      bottom: 35%;
       left: 0;
       right: 0;
       padding: 20px;
       .home-slider-item-tag {
-        background: rgba($color-yellow, .6);
+        background: rgba($color-yellow, .8);
         padding: 7px 10px;
         display: inline-block;
         line-height: 1;
@@ -59,6 +59,7 @@
         font-weight: $font-weight-extra-bold;
         margin-bottom: 10px;
         box-shadow: rgba(black, .3) 1px 1px 2px;
+        text-shadow: rgba(black, .2) 1px 1px 1px;
       }
       .home-slider-item-title {
         line-height: 1;
@@ -73,36 +74,37 @@
       }
     }
   }
-  .home-slider-thumbs {
-    position: absolute;
-    z-index: 2;
-    bottom: 80px;
-    right: -10px;
-    box-shadow: rgba(black, .6) 1px 1px 1px;
-    width: 150px;
-    height: 70px;
-    ul {
-      @include ul-reset;
-      li {
-        width: 50px;
+}
+
+.home-slider-thumbs {
+  position: absolute;
+  z-index: 2;
+  bottom: 100px;
+  right: -40px;
+  box-shadow: rgba(black, .6) 1px 1px 1px;
+  width: 150px;
+  height: 70px;
+  ul {
+    @include ul-reset;
+    li {
+      width: 50px;
+      display: inline-block;
+      a {
         display: inline-block;
-        a {
+        img {
+          width: 100%;
           display: inline-block;
-          img {
-            width: 100%;
-            display: inline-block;
-          }
         }
       }
     }
-    .tns-controls {
-      position: absolute;
-      top: -25px;
-      right: 0;
-      display: none;
-      @media #{$medium-up} {
-        display: block;
-      }
+  }
+  .tns-controls {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    display: none;
+    @media #{$medium-up} {
+      display: block;
     }
   }
 }
