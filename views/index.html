@@ -20,26 +20,28 @@
     <div class="home-slider">
       <div class="home-slider-thumbs">
         <ul>
-          {% for item in [1, 2, 3, 4, 5] %}<li>
+          {% for item in [1, 2, 3, 4, 5] %}<li data-id="{{ item }}">
               <a href="#">
                 <img src="images/home-slider-mobile-{{ item }}.jpg">
               </a>
             </li>{% endfor %}
         </ul>
       </div>
-      <div class="home-slider-item" style="background-image: url(
-        images/home-slider-mobile-5.jpg)">
-        <div class="home-slider-item-description">
-          <a href="#" class="home-slider-item-tag">
-            Play video
-          </a>
-          <h2 class="home-slider-item-title">
-            <a href="#">
-              Hang soon doong cave
+      {% for item in [1, 2, 3, 4, 5] %}
+        <div class="home-slider-item {% if item === 1 %}active{% endif %}" style="background-image: url(
+          images/home-slider-mobile-{{ item }}.jpg)" data-id="{{ item }}">
+          <div class="home-slider-item-description">
+            <a href="#" class="home-slider-item-tag">
+              Play video
             </a>
-          </h2>
+            <h2 class="home-slider-item-title">
+              <a href="#">
+                Hang soon doong cave {{ item }}
+              </a>
+            </h2>
+          </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 {% endblock %}
