@@ -6,7 +6,10 @@
   bottom: 0;
   background: #333;
   overflow: hidden;
-  border: 8px solid white;
+  border: $border-page-size solid white;
+  @media #{$medium-up} {
+    border-width: $border-page-size-large;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -47,6 +50,9 @@
       left: 0;
       right: 0;
       padding: 20px;
+      @media #{$medium-up} {
+        padding: 40px;
+      }
       .home-slider-item-tag {
         background: rgba($color-yellow, .8);
         padding: 7px 10px;
@@ -60,11 +66,18 @@
         margin-bottom: 10px;
         box-shadow: rgba(black, .3) 1px 1px 2px;
         text-shadow: rgba(black, .2) 1px 1px 1px;
+        @media #{$medium-up} {
+          padding: 10px 15px;
+          font-size: 18px;
+        }
       }
       .home-slider-item-title {
         line-height: 1;
         font-size: 32px;
         text-shadow: rgba(black, .6) 1px 1px 2px;
+        @media #{$medium-up} {
+          font-size: 64px;
+        }
         a {
           display: inline-block;
           color: white;
@@ -84,11 +97,19 @@
   box-shadow: rgba(black, .6) 1px 1px 1px;
   width: 150px;
   height: 70px;
+  @media #{$medium-up} {
+    bottom: 150px;
+    width: 300px;
+    height: 140px;
+  }
   ul {
     @include ul-reset;
     li {
       width: 50px;
       display: inline-block;
+      @media #{$medium-up} {
+        width: 100px;
+      }
       a {
         display: inline-block;
         img {
@@ -103,8 +124,8 @@
     top: -25px;
     right: 0;
     display: none;
-    @media #{$medium-up} {
-      display: block;
+    @media #{$large-up} {
+      // display: block;
     }
   }
 }

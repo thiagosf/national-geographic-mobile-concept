@@ -17,13 +17,21 @@ var App = {
         controls: true,
         slideBy: 1,
         autoplay: false,
-        mouseDrag: true
       });
       if (slider) {
         slider.events.on('transitionEnd', function (info) {
           var id = info.container.children[info.index].getAttribute('data-id');
           changeSlide(id);
         });
+
+        document.addEventListener('click', function (event) {
+          console.log(event.target, Helpers.hasInParents(event.target, '.tns-item') )
+          if (
+            event.target.classList.contains('tns-item')
+          ) {
+            console.log('crickou')
+          }
+        }, false);
       }
     }
 
@@ -69,6 +77,15 @@ var App = {
     document.querySelector('.open-search').addEventListener('click', toggleSearchBox);
   }
 };
+
+var Helpers = {
+  hasInParents: function hasInParents(el, id) {
+    console.log(el.parentNode)
+    if(el.id === id) return true; // the element
+    if(el.parentNode) return hasInParents(el.parentNode,id); // a parent
+    return false; // not the element nor its parents
+  }
+}
 
 App.init();
 

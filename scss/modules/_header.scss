@@ -1,33 +1,54 @@
 header.main-header {
   position: fixed;
   z-index: 10;
-  top: 10px;
-  left: 10px;
-  right: 10px;
+  top: $border-page-size;
+  left: $border-page-size;
+  right: $border-page-size;
+  @media #{$medium-up} {
+    top: $border-page-size-large;
+    left: $border-page-size-large;
+    right: $border-page-size-large;
+  }
   .wrapper {
     position: relative;
     padding: 20px;
+    @media #{$medium-up} {
+      padding: 40px;
+    }
   }
   .logo {
     color: white;
     width: 100px;
     height: 30px;
     display: block;
+    @media #{$medium-up} {
+      width: 200px;
+      height: 60px;
+    }
   }
   .open-menu {
     @include header-icon;
     right: 8px;
+    @media #{$medium-up} {
+      right: 16px;
+    }
   }
   .open-search {
     @include header-icon;
     right: 48px;
     transition: all 500ms $ease-out-expo;
+    @media #{$medium-up} {
+      right: 100px;
+    }
     span {
       @include header-icon;
       transition: all 500ms $ease-out-expo;
       position: absolute;
       top: 0;
       left: 0;
+      @media #{$medium-up} {
+        top: 0;
+      }
       &.close {
         opacity: 0;
         transform: rotate(-45deg);

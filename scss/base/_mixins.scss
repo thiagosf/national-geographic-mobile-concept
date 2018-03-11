@@ -15,6 +15,12 @@
   position: absolute;
   top: 16px;
   padding: 12px;
+  @media #{$medium-up} {
+    top: 32px;
+    width: 28px;
+    height: 28px;
+    padding: 24px;
+  }
   .svg-icon {
     vertical-align: top;
   }

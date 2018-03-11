@@ -14,14 +14,23 @@
     position: absolute;
     top: 26px;
     right: 18px;
+    @media #{$medium-up} {
+      top: 48px;
+      right: 32px;
+    }
   }
   .wrapper {
     position: absolute;
     top: 80px;
-    right: 28px;
     left: 0px;
-    bottom: 28px;
+    right: 20px + $border-page-size;
+    bottom: 20px + $border-page-size;
     overflow: auto;
+    @media #{$medium-up} {
+      top: 160px;
+      right: 40px + $border-page-size-large;
+      bottom: 40px + $border-page-size-large;
+    }
     .main-menu-mobile {
       ul {
         @include ul-reset;
@@ -56,6 +65,10 @@
             padding: 5px 0 5px 10px;
             text-transform: uppercase;
             background: white;
+            @media #{$medium-up} {
+              font-size: 20px;
+              padding: 10px 0 10px 20px;
+            }
           }
         }
       }
@@ -73,6 +86,11 @@
             display: inline-block;
             color: black;
             padding: 5px;
+            @media #{$medium-up} {
+              width: 32px;
+              height: 32px;
+              padding: 10px;
+            }
           }
         }
       }
@@ -83,14 +101,20 @@
 .mobile-menu-overlay {
   position: fixed;
   z-index: 99;
-  top: 8px;
-  left: 8px;
-  right: 8px;
-  bottom: 8px;
+  top: $border-page-size;
+  left: $border-page-size;
+  right: $border-page-size;
+  bottom: $border-page-size;
   background: black;
   opacity: 0;
   transition: opacity 500ms $ease-out-expo;
   transform: translateX(100%);
+  @media #{$medium-up} {
+    top: $border-page-size-large;
+    left: $border-page-size-large;
+    right: $border-page-size-large;
+    bottom: $border-page-size-large;
+  }
 }
 
 body.mobile-menu-opened {
