@@ -1,15 +1,16 @@
-// import tns from 'tiny-slider'
-// import { tns } from '../node_modules/tiny-slider/src/tiny-slider'
-var tns = require('../node_modules/tiny-slider/src/tiny-slider')
-
-function initTiny () {
-  console.log(tns)
+function initTinySlider () {
   var slider = tns({
-    container: '.my-slider',
+    container: '.home-slider-thumbs ul',
     items: 3,
-    slideBy: 'page',
-    autoplay: true
-  });
+    nav: false,
+    slideBy: 1,
+    autoplay: false
+  })
+  if (slider) {
+    slider.events.on('transitionEnd', function () {
+      console.log(arguments)
+    })
+  }
 }
 
-window.addEventListener('load', initTiny)
+window.addEventListener('load', initTinySlider)

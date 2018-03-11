@@ -61,14 +61,11 @@
     bottom: 80px;
     right: -10px;
     box-shadow: rgba(black, .6) 1px 1px 1px;
+    width: 110px;
+    height: 70px;
+    overflow: hidden;
     ul {
       @include ul-reset;
-      width: 110px;
-      height: 70px;
-      overflow: hidden;
-      overflow: hidden;
-      text-align: right;
-      white-space: nowrap;
       li {
         width: 50px;
         display: inline-block;
