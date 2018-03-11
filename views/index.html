@@ -1,0 +1,45 @@
+{% extends "partials/base.html" %}
+{% block content %}
+  <div class="page page-home">
+    <div class="home-news-footer">
+      <ul>
+        <li>
+          <a href="#">
+            <h3>One world, 7 billion faces</h3>
+            <p>Read more {{ "arrow" | icon | safe }}</p>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <h3>Invaders from space - Meteorites</h3>
+            <p>Read more {{ "arrow" | icon | safe }}</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="home-slider">
+      <div class="home-slider-thumbs">
+        <ul>
+          {% for item in [1, 2, 3, 4, 5] %}<li>
+              <a href="#">
+                <img src="images/home-slider-mobile-{{ item }}.jpg">
+              </a>
+            </li>{% endfor %}
+        </ul>
+      </div>
+      <div class="home-slider-item" style="background-image: url(
+        images/home-slider-mobile-5.jpg)">
+        <div class="home-slider-item-description">
+          <a href="#" class="home-slider-item-tag">
+            Play video
+          </a>
+          <h2 class="home-slider-item-title">
+            <a href="#">
+              Hang soon doong cave
+            </a>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

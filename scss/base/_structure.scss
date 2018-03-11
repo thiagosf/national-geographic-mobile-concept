@@ -1,0 +1,28 @@
+body {
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: $font-family-sans-serif;
+  position: relative;
+}
+
+.svg-icon {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	fill: currentColor;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    margin: 0;
+    font-weight: $font-weight-extra-bold;
+  }
+}
+
+p {
+  margin: 0;
+  line-height: 1.5;
+}

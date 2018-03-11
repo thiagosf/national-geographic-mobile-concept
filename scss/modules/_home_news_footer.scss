@@ -1,0 +1,42 @@
+.home-news-footer {
+  position: absolute;
+  z-index: 30;
+  bottom: 10px;
+  left: 10px;
+  width: 50%;
+  ul {
+    @include ul-reset;
+    padding: 20px;
+    li {
+      margin: 0 0 15px 0;
+      padding: 0 0 15px 0;
+      border-bottom: 2px solid rgba(white, .5);
+      &:last-child {
+        margin: 0;
+        padding: 0;
+        border-bottom: 0;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        text-shadow: rgba(black, .6) 1px 1px 2px;
+        h3 {
+          font-family: $font-family-serif;
+          font-size: 14px;
+          line-height: 1.2;
+        }
+        p {
+          font-size: 12px;
+          text-transform: uppercase;
+          color: $color-yellow;
+          font-weight: $font-weight-bold;
+          .svg-icon {
+            width: 8px;
+            height: 8px;
+            margin-left: 7px;
+          }
+        }
+      }
+    }
+  }
+}

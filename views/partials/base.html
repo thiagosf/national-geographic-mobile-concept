@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ language }}">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta content="{{ themeColor }}" name="theme-color">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karma:300,400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css" media="all">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/> -->
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="wrapper">
+        <a href="/" class="logo">
+          {{ "logo" | icon | safe }}
+        </a>
+        <a href="#" class="open-search">
+          {{ "zoom" | icon | safe }}
+        </a>
+        <a href="#" class="open-menu">
+          {{ "menu" | icon | safe }}
+        </a>
+      </div>
+    </header>
+    {% block content %}{% endblock %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.1/svg4everybody.min.js"></script>
+    <script>svg4everybody();</script>
+    <script type="text/javascript" src="js/app.js" charset="utf-8"></script>
+  </body>
+</html>

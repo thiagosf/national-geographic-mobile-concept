@@ -1,0 +1,27 @@
+$screen-xs-max: 480;
+$screen-sm-max: 768;
+$screen-md-max: 1024;
+
+$small-down: "(max-width: #{$screen-xs-max + 1})";
+
+// < 768px
+$medium-down: "(max-width: #{$screen-sm-max + 1})";
+
+// >= 768px
+$medium-up: "(min-width: #{$screen-xs-max + 1})";
+$medium-only: "(min-width: #{$screen-xs-max + 1}) and (max-width: #{$screen-sm-max})";
+
+// >= 992px
+$large-up: "(min-width: #{$screen-sm-max + 1})";
+
+// >= 1200px
+$xlarge-up: "(min-width: #{$screen-md-max + 1})";
+
+// >= 1366px
+$xxlarge-up: "(min-width: 1366px)";
+
+// >= 1920px
+$xxxlarge-up: "(min-width: 1920px)";
+
+// Nav break
+$nav-break: "(max-width: #{$screen-sm-max})";
