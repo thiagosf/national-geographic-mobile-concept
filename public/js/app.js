@@ -17,19 +17,18 @@ var App = {
         controls: true,
         slideBy: 1,
         autoplay: false,
+        controlsText: ['<svg class="svg-icon svg-icon-arrow-left"><use xlink:href="svgsprite.svg#arrow-left"></use></svg>', '<svg class="svg-icon svg-icon-arrow-right"><use xlink:href="svgsprite.svg#arrow-right"></use></svg>']
       });
       if (slider) {
         slider.events.on('transitionEnd', function (info) {
           var id = info.container.children[info.index].getAttribute('data-id');
           changeSlide(id);
         });
-
+        document.querySelector('.home-slider-thumbs').classList.add('ready');
         document.addEventListener('click', function (event) {
-          console.log(event.target, Helpers.hasInParents(event.target, '.tns-item') )
-          if (
-            event.target.classList.contains('tns-item')
-          ) {
-            console.log('crickou')
+          var el;
+          if (el = Helpers.getParentClickedByClassName(event.target, 'tns-item')) {
+            changeSlide(el.getAttribute('data-id'));
           }
         }, false);
       }
@@ -79,13 +78,17 @@ var App = {
 };
 
 var Helpers = {
-  hasInParents: function hasInParents(el, id) {
-    console.log(el.parentNode)
-    if(el.id === id) return true; // the element
-    if(el.parentNode) return hasInParents(el.parentNode,id); // a parent
-    return false; // not the element nor its parents
+  getParentClickedByClassName: function getParentClickedByClassName(el, className, max, count) {
+    if (!count) count = 1;
+    if (!max) max = 3;
+    if (count < max) {
+      if (el.classList && el.classList.contains(className)) return el;
+      if (el && el.parentNode) return getParentClickedByClassName(el.parentNode, className, max, count + 1);
+      return false;
+    }
+    return false;
   }
-}
+};
 
 App.init();
 

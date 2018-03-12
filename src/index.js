@@ -14,13 +14,23 @@ var App = {
         controls: true,
         slideBy: 1,
         autoplay: false,
-        mouseDrag: true
+        controlsText: [
+          '<svg class="svg-icon svg-icon-arrow-left"><use xlink:href="svgsprite.svg#arrow-left"></use></svg>', 
+          '<svg class="svg-icon svg-icon-arrow-right"><use xlink:href="svgsprite.svg#arrow-right"></use></svg>'
+        ]
       })
       if (slider) {
         slider.events.on('transitionEnd', function (info) {
           var id = info.container.children[info.index].getAttribute('data-id')
           changeSlide(id)
         })
+        document.querySelector('.home-slider-thumbs').classList.add('ready')
+        document.addEventListener('click', function (event) {
+          var el
+          if (el = Helpers.getParentClickedByClassName(event.target, 'tns-item')) {
+            changeSlide(el.getAttribute('data-id'))
+          }
+        }, false);
       }
     }
 
@@ -64,6 +74,19 @@ var App = {
       document.querySelector('.search-box form input').focus()
     }
     document.querySelector('.open-search').addEventListener('click', toggleSearchBox)
+  }
+}
+
+var Helpers = {
+  getParentClickedByClassName: function getParentClickedByClassName (el, className, max, count) {
+    if (!count) count = 1
+    if (!max) max = 3
+    if (count < max) {
+      if (el.classList && el.classList.contains(className)) return el;
+      if (el && el.parentNode) return getParentClickedByClassName(el.parentNode, className, max, count + 1);
+      return false;
+    }
+    return false;
   }
 }
 

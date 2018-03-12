@@ -102,6 +102,15 @@
     width: 300px;
     height: 140px;
   }
+  &.ready {
+    ul {
+      li {
+        img {
+          opacity: 1;
+        }
+      }
+    }
+  }
   ul {
     @include ul-reset;
     li {
@@ -110,22 +119,31 @@
       @media #{$medium-up} {
         width: 100px;
       }
-      a {
+      img {
+        transition: opacity 600ms;
+        opacity: 0;
+        width: 100%;
         display: inline-block;
-        img {
-          width: 100%;
-          display: inline-block;
-        }
       }
     }
   }
   .tns-controls {
-    position: absolute;
-    top: -25px;
-    right: 0;
     display: none;
-    @media #{$large-up} {
-      // display: block;
+    @media #{$xlarge-up} {
+      position: absolute;
+      top: -45px;
+      left: 0;
+      display: block;
+      button {
+        background: transparent;
+        border: 0;
+        padding: 10px;
+        color: white;
+        .svg-icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
   }
 }
