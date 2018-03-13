@@ -78,7 +78,11 @@ var App = {
       body.classList.toggle('search-box-opened');
       document.querySelector('.search-box form input').focus();
     };
+    var onSubmit = function onSubmit(e) {
+      e.target.classList.add('sending');
+    };
     document.querySelector('.open-search').addEventListener('click', toggleSearchBox);
+    document.querySelector('.search-box form').addEventListener('submit', onSubmit);
   }
 };
 

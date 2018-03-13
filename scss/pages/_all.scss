@@ -1,9 +1,12 @@
 .page {
   &.page-home {
     position: relative;
-    min-height: 600px;
     overflow: hidden;
-    @media (min-height: 600px) {
+    min-height: 100vh;
+    @media #{$medium-up} {
+      min-height: 700px;
+    }
+    @media #{$medium-up} and (min-height: 700px) {
       min-height: 100vh;
     }
     &::after {

@@ -22,15 +22,15 @@ header.main-header {
     height: 30px;
     display: block;
     @media #{$medium-up} {
-      width: 200px;
-      height: 60px;
+      width: 150px;
+      height: 45px;
     }
   }
   .open-menu {
     @include header-icon;
     right: 8px;
     @media #{$medium-up} {
-      right: 16px;
+      right: 12px;
     }
   }
   .open-search {
@@ -38,7 +38,7 @@ header.main-header {
     right: 48px;
     transition: all 500ms $ease-out-expo;
     @media #{$medium-up} {
-      right: 100px;
+      right: 68px;
     }
     span {
       @include header-icon;

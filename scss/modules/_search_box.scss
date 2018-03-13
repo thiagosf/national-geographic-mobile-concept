@@ -10,7 +10,7 @@
   overflow: hidden;
   transition: height 300ms $ease-out-expo;
   @media #{$medium-up} {
-    top: 160px;
+    top: 120px;
     left: $border-page-size-large;
     right: $border-page-size-large;
   }
@@ -46,8 +46,8 @@
       text-align: center;
       padding: 0 50px;
       @media #{$medium-up} {
-        font-size: 48px;
-        height: 96px;
+        font-size: 40px;
+        height: 80px;
       }
     }
     button {
@@ -65,7 +65,7 @@
       @media #{$medium-up} {
         height: 36px;
         width: 36px;
-        padding: 32px;
+        padding: 25px;
       }
       span {
         transition: all 300ms;
@@ -79,8 +79,8 @@
           left: 16px;
           @media #{$medium-up} {
             @include spinner(30px, false);
-            top: 32px;
-            left: 32px;
+            top: 25px;
+            left: 25px;
           }
         }
       }
@@ -92,7 +92,7 @@ body.search-box-opened {
   .search-box {
     height: 50px;
     @media #{$medium-up} {
-      height: 100px;
+      height: 86px;
     }
   }
   header.main-header {

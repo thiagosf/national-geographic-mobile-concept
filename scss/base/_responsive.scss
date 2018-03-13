@@ -1,15 +1,16 @@
 $screen-xs-max: 576;
 $screen-sm-max: 768;
 $screen-md-max: 992;
+$screen-lg-min: 1024;
 
-$small-down: "(max-width: #{$screen-xs-max + 1}px)";
+$small-down: "(max-width: #{$screen-xs-max - 1}px)";
 
 // < 768px
-$medium-down: "(max-width: #{$screen-sm-max + 1}px)";
+$medium-down: "(max-width: #{$screen-sm-max - 1}px)";
 
 // >= 768px
-$medium-up: "(min-width: #{$screen-xs-max + 1}px)";
-$medium-only: "(min-width: #{$screen-xs-max + 1}px) and (max-width: #{$screen-sm-max}px)";
+$medium-up: "(min-width: #{$screen-sm-max}px)";
+$medium-only: "(min-width: #{$screen-sm-max}px) and (max-width: #{$screen-lg-min}px)";
 
 // >= 992px
 $large-up: "(min-width: #{$screen-sm-max + 1}px)";

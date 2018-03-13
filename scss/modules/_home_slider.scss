@@ -68,7 +68,7 @@
         text-shadow: rgba(black, .2) 1px 1px 1px;
         @media #{$medium-up} {
           padding: 10px 15px;
-          font-size: 18px;
+          font-size: 16px;
         }
       }
       .home-slider-item-title {
@@ -76,7 +76,7 @@
         font-size: 32px;
         text-shadow: rgba(black, .6) 1px 1px 2px;
         @media #{$medium-up} {
-          font-size: 64px;
+          font-size: 52px;
         }
         a {
           display: inline-block;
@@ -97,7 +97,7 @@
   width: 150px;
   height: 70px;
   @media #{$medium-up} {
-    bottom: 150px;
+    bottom: 115px;
     width: 300px;
     height: 140px;
   }
