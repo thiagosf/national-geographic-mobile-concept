@@ -1,7 +1,22 @@
 .page {
   &.page-home {
     position: relative;
-    min-height: 100vh;
+    min-height: 600px;
     overflow: hidden;
+    @media (min-height: 600px) {
+      min-height: 100vh;
+    }
+    &::after {
+      content: "";
+      position: fixed;
+      z-index: 20;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-bottom: $border-page-size solid white;
+      @media #{$medium-up} {
+        border-bottom-width: $border-page-size-large;
+      }
+    }
   }
 }

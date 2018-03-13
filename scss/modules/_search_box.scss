@@ -15,7 +15,24 @@
     right: $border-page-size-large;
   }
   form {
+    &.sending {
+      pointer-events: none;
+      button {
+        span {
+          &.zoom {
+            opacity: 0;
+          }
+          &.spinner {
+            opacity: 1;
+          }
+        }
+      }
+      input {
+        opacity: .2;
+      }
+    }
     input {
+      transition: all 300ms;
       background: transparent;
       display: block;
       width: 100%;
@@ -49,6 +66,23 @@
         height: 36px;
         width: 36px;
         padding: 32px;
+      }
+      span {
+        transition: all 300ms;
+        &.zoom {
+        }
+        &.spinner {
+          @include spinner(15px, false);
+          position: absolute;
+          opacity: 0;
+          top: 16px;
+          left: 16px;
+          @media #{$medium-up} {
+            @include spinner(30px, false);
+            top: 32px;
+            left: 32px;
+          }
+        }
       }
     }
   }

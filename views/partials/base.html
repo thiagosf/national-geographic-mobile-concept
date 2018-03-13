@@ -59,7 +59,10 @@
         <form action="#">
           <input type="text" placeholder="explore">
           <button type="submit">
-            {{ "zoom" | icon | safe }}
+            <span class="zoom">{{ "zoom" | icon | safe }}</span>
+            <span class="spinner active">
+              <span><span></span></span>
+            </span>
           </button>
         </form>
       </div>

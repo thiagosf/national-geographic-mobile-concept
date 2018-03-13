@@ -7,16 +7,19 @@
   background: white;
   width: 55%;
   transition: transform 500ms $ease-out-expo;
-  transform: translateX(100%);
+  transform: translateX(120%);
+  @media #{$large-up} {
+    width: 400px;
+  }
   .close-menu {
     @include header-icon;
     color: black;
     position: absolute;
-    top: 26px;
-    right: 18px;
+    top: 25px;
+    right: 16px;
     @media #{$medium-up} {
-      top: 48px;
-      right: 32px;
+      top: 40px;
+      right: 25px;
     }
   }
   .wrapper {
@@ -29,7 +32,7 @@
     @media #{$medium-up} {
       top: 160px;
       right: 40px + $border-page-size-large;
-      bottom: 40px + $border-page-size-large;
+      bottom: $border-page-size-large;
     }
     .main-menu-mobile {
       ul {
@@ -108,7 +111,7 @@
   background: black;
   opacity: 0;
   transition: opacity 500ms $ease-out-expo;
-  transform: translateX(100%);
+  transform: translateX(120%);
   @media #{$medium-up} {
     top: $border-page-size-large;
     left: $border-page-size-large;

@@ -14,8 +14,9 @@ Challange **National Geographic Mobile Concept**
 ## TODO
 
 - [x] Home page mobile
-- [ ] Home page tablet
+- [x] Home page tablet
 - [ ] Home page desktop
+- [ ] Different images in break-points
 
 ## Credits
 

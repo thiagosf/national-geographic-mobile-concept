@@ -28,7 +28,12 @@ var App = {
         document.addEventListener('click', function (event) {
           var el;
           if (el = Helpers.getParentClickedByClassName(event.target, 'tns-item')) {
-            changeSlide(el.getAttribute('data-id'));
+            var children = [].slice.call(slider.getInfo().container.children);
+            children.map(function (item, index) {
+              if (item === el) {
+                slider.goTo(index);
+              }
+            });
           }
         }, false);
       }
