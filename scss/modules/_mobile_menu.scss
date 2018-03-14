@@ -58,6 +58,7 @@
             }
           }
           a {
+            transition: color 300ms;
             position: relative;
             z-index: 2;
             display: inline-block;
@@ -72,6 +73,15 @@
               font-size: 20px;
               padding: 10px 0 10px 20px;
             }
+            @media #{$large-up} {
+              font-size: 16px;
+              padding: 5px 0 5px 15px;
+            }
+            &:hover {
+              @media #{$large-up} {
+                color: $color-gray;
+              }
+            }
           }
         }
       }
@@ -84,6 +94,7 @@
         li {
           display: inline-block;
           a {
+            transition: color 300ms;
             width: 26px;
             height: 26px;
             display: inline-block;
@@ -93,6 +104,11 @@
               width: 32px;
               height: 32px;
               padding: 10px;
+            }
+            &:hover {
+              @media #{$large-up} {
+                color: $color-gray;
+              }
             }
           }
         }

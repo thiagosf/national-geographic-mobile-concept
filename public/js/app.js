@@ -7,6 +7,7 @@ var App = {
     this.slider();
     this.mobileMenu();
     this.searchBox();
+    this.interchange();
   },
   slider: function slider() {
     function initTinySlider() {
@@ -83,6 +84,49 @@ var App = {
     };
     document.querySelector('.open-search').addEventListener('click', toggleSearchBox);
     document.querySelector('.search-box form').addEventListener('submit', onSubmit);
+  },
+  interchange: function interchange() {
+    var elements = [].slice.call(document.querySelectorAll('[data-interchange]'));
+    var breakpoints = {
+      small: 768,
+      medium: 1024
+    };
+    var window_width = Number(window.innerWidth);
+    var delay = 300;
+    var interval;
+
+    var checkItem = function checkItem(element, width) {
+      var breakpoint = 'large';
+      if (width <= breakpoints.small) {
+        breakpoint = 'small';
+      } else if (width <= breakpoints.medium) {
+        breakpoint = 'medium';
+      }
+      var data = element.getAttribute('data-interchange').split(',').map(function (item) {
+        return item.split(':');
+      });
+      data.map(function (item) {
+        if (item[1] === breakpoint) {
+          element.style.backgroundImage = 'url(' + item[0] + ')';
+        }
+      });
+    };
+
+    var onResize = function onResize(e) {
+      clearTimeout(interval);
+      interval = setTimeout(function () {
+        window_width = Number(window.innerWidth);
+        elements.map(function (element) {
+          checkItem(element, window_width);
+        });
+      }, delay);
+    };
+
+    elements.map(function (element) {
+      checkItem(element, window_width);
+    });
+
+    window.addEventListener('resize', onResize);
   }
 };
 

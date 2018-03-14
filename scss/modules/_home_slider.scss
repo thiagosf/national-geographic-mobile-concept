@@ -1,5 +1,6 @@
 .home-slider {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -70,6 +71,11 @@
           padding: 10px 15px;
           font-size: 16px;
         }
+        &:hover {
+          @media #{$large-up} {
+            background: black;
+          }
+        }
       }
       .home-slider-item-title {
         line-height: 1;
@@ -79,10 +85,27 @@
           font-size: 52px;
         }
         a {
-          display: inline-block;
+          display: block;
           color: white;
           text-decoration: none;
           text-transform: uppercase;
+          position: relative;
+          &::after {
+            position: absolute;
+            content: "";
+            transition: all 300ms $ease-out-quint;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0px;
+            height: $border-page-size-large;
+            background: white;
+          }
+          &:hover {
+            &::after {
+              width: 25px;
+            }
+          }
         }
       }
     }

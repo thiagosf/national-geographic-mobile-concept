@@ -26,8 +26,11 @@
     </div>
     <div class="home-slider">
       {% for item in [1, 2, 3, 4, 5] %}
-        <div class="home-slider-item {% if item === 1 %}active{% endif %}" style="background-image: url(
-          images/home-slider-mobile-{{ item }}.jpg)" data-id="{{ item }}">
+        <div 
+          class="home-slider-item {% if item === 1 %}active{% endif %}" 
+          data-id="{{ item }}"
+          data-interchange="images/home-slider-mobile-{{ item }}.jpg:small,images/home-slider-mobile-{{ item }}-medium.jpg:medium,images/home-slider-mobile-{{ item }}-large.jpg:large"
+          >
           <div class="home-slider-item-description">
             <a href="#" class="home-slider-item-tag">
               Play video
