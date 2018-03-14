@@ -23,7 +23,8 @@ var App = {
       if (slider) {
         slider.events.on('transitionEnd', function (info) {
           var id = info.container.children[info.index].getAttribute('data-id');
-          changeSlide(id);
+          var number = info.container.children[info.index].getAttribute('data-number');
+          changeSlide(id, number);
         });
         document.querySelector('.home-slider-thumbs').classList.add('ready');
         document.addEventListener('click', function (event) {
@@ -40,7 +41,11 @@ var App = {
       }
     }
 
-    function changeSlide(id) {
+    function changeSlide(id, number) {
+      if (number < 10) {
+        number = '0' + number;
+      }
+      document.querySelector('.home-slider-paging-page').innerText = number;
       var items = [].slice.call(document.querySelectorAll('.home-slider-item'));
       items.map(function (item) {
         if (item.classList.contains('active')) {

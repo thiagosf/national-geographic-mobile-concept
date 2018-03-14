@@ -30,17 +30,19 @@
     background-size: cover;
     opacity: 0;
     transition: all 500ms;
-    transform: scale(0.95);
+    transform: scale(0.98);
+    pointer-events: none;
     &.active {
       transform: scale(1);
       opacity: 1;
+      pointer-events: initial;
     }
     &.leaving {
       opacity: 0;
-      transform: scale(1.05);
+      transform: scale(1.02);
     }
     &.entering {
-      transition-delay: 100ms;
+      transition-delay: 300ms;
       transform: scale(1);
       opacity: 1;
     }
@@ -49,12 +51,12 @@
       z-index: 2;
       bottom: 35%;
       left: 0;
-      right: 0;
       padding: 20px;
       @media #{$medium-up} {
         padding: 40px;
       }
       .home-slider-item-tag {
+        transition: all 300ms;
         background: rgba($color-yellow, .8);
         padding: 7px 10px;
         display: inline-block;
@@ -73,7 +75,7 @@
         }
         &:hover {
           @media #{$large-up} {
-            background: black;
+            background: rgba($color-yellow, .5);
           }
         }
       }
@@ -85,25 +87,26 @@
           font-size: 52px;
         }
         a {
-          display: block;
+          display: inline-block;
           color: white;
           text-decoration: none;
           text-transform: uppercase;
-          position: relative;
           &::after {
             position: absolute;
             content: "";
             transition: all 300ms $ease-out-quint;
-            left: -40px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 0px;
-            height: $border-page-size-large;
-            background: white;
+            left: 10px;
+            top: 10px;
+            right: 10px;
+            bottom: 10px;
+            background: transparent;
+            pointer-events: none;
+            transform: scale(.98);
           }
           &:hover {
             &::after {
-              width: 25px;
+              background: rgba(white, .2);
+              transform: scale(1);
             }
           }
         }
@@ -165,6 +168,39 @@
           width: 20px;
           height: 20px;
         }
+      }
+    }
+  }
+}
+
+.home-slider-paging {
+  position: absolute;
+  z-index: 2;
+  bottom: 30px;
+  right: 30px;
+  color: white;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    font-weight: $font-weight-bold;
+    &.home-slider-paging-page {
+      font-size: 12px;
+      @media #{$medium-up} {
+        font-size: 14px;
+      }
+    }
+    &.home-slider-paging-separator {
+      font-size: 12px;
+      margin: 0 5px;
+      @media #{$medium-up} {
+        font-size: 14px;
+      }
+    }
+    &.home-slider-paging-count {
+      font-size: 16px;
+      @media #{$medium-up} {
+        font-size: 18px;
       }
     }
   }

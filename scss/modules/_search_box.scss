@@ -98,6 +98,9 @@ body.search-box-opened {
   header.main-header {
     .open-search {
       transform: rotate(45deg);
+      &:hover {
+        background: none;
+      }
       span {
         &.open {
           opacity: 0;

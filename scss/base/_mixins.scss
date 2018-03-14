@@ -8,6 +8,7 @@
 }
 
 @mixin header-icon {
+  transition: all 300ms;
   display: block;
   color: white;
   width: 14px;
@@ -16,13 +17,18 @@
   top: 16px;
   padding: 12px;
   @media #{$medium-up} {
-    top: 28px;
+    top: 36px;
     width: 20px;
     height: 20px;
-    padding: 24px;
+    padding: 16px;
   }
   .svg-icon {
     vertical-align: top;
+  }
+  &:hover {
+    @media #{$large-up} {
+      background: rgba(white, .2);
+    }
   }
 }
 

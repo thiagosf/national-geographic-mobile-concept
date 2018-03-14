@@ -15,8 +15,8 @@ Challange **National Geographic Mobile Concept**
 
 - [x] Home page mobile
 - [x] Home page tablet
-- [ ] Home page desktop
-- [ ] Different images in break-points
+- [x] Home page desktop
+- [x] Different images in break-points
 
 ## Credits
 

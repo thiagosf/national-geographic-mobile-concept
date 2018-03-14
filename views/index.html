@@ -19,10 +19,13 @@
     </div>
     <div class="home-slider-thumbs">
       <ul>
-        {% for item in [1, 2, 3, 4, 5] %}<li data-id="{{ item }}">
-          <img src="images/home-slider-mobile-{{ item }}.jpg">
+        {% for item in [1, 2, 3, 4, 5] %}<li data-number="{{ item }}" data-id="{{ item }}">
+          <img src="images/home-slider-mobile-{{ item }}-thumb.jpg">
         </li>{% endfor %}
       </ul>
+    </div>
+    <div class="home-slider-paging">
+      <span class="home-slider-paging-page">01</span><span class="home-slider-paging-separator">|</span><span class="home-slider-paging-count">05</span>
     </div>
     <div class="home-slider">
       {% for item in [1, 2, 3, 4, 5] %}
@@ -32,11 +35,11 @@
           data-interchange="images/home-slider-mobile-{{ item }}.jpg:small,images/home-slider-mobile-{{ item }}-medium.jpg:medium,images/home-slider-mobile-{{ item }}-large.jpg:large"
           >
           <div class="home-slider-item-description">
-            <a href="#" class="home-slider-item-tag">
+            <a href="#{{ item }}" class="home-slider-item-tag">
               Play video
             </a>
             <h2 class="home-slider-item-title">
-              <a href="#">
+              <a href="#{{ item }}">
                 Hang soon doong cave {{ item }}
               </a>
             </h2>

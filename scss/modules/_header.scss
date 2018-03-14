@@ -30,7 +30,7 @@ header.main-header {
     @include header-icon;
     right: 8px;
     @media #{$medium-up} {
-      right: 12px;
+      right: 24px;
     }
   }
   .open-search {
@@ -38,7 +38,7 @@ header.main-header {
     right: 48px;
     transition: all 500ms $ease-out-expo;
     @media #{$medium-up} {
-      right: 68px;
+      right: 80px;
     }
     span {
       @include header-icon;
