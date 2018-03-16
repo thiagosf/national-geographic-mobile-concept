@@ -4,6 +4,7 @@
 // slider
 var App = {
   init: function init() {
+    this.preloader();
     this.slider();
     this.mobileMenu();
     this.searchBox();
@@ -132,6 +133,17 @@ var App = {
     });
 
     window.addEventListener('resize', onResize);
+  },
+  preloader: function preloader() {
+    document.body.classList.add('active-preloader');
+    var onLoad = function onLoad() {
+      document.body.classList.add('leaving');
+      setTimeout(function () {
+        document.body.classList.remove('active-preloader');
+        document.body.classList.remove('leaving');
+      }, 500);
+    };
+    window.addEventListener('load', onLoad);
   }
 };
 

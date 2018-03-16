@@ -1,0 +1,101 @@
+$preloader-thickness: 8px;
+$preloader-width: 50px;
+$preloader-height: 70px;
+
+.active-preloader {
+  &.leaving {
+    .preloader {
+      opacity: 0;
+    }
+  }
+  .preloader {
+    opacity: 1;
+  }
+}
+
+.preloader {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  opacity: 0;
+  transition: all 500ms;
+  pointer-events: none;
+  .preloader-spinner {
+    width: $preloader-width;
+    height: $preloader-height;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    span {
+      position: absolute;
+      background: $color-yellow;
+      width: $preloader-thickness;
+      height: $preloader-thickness;
+      &.preloader-spinner-left {
+        height: 0px;
+        left: 0;
+        bottom: 0;
+        animation: preloaderSpinnerLeft 1000ms infinite;
+      }
+      &.preloader-spinner-top {
+        width: 0px;
+        top: 0;
+        left: 0;
+        animation: preloaderSpinnerTop 1000ms 1000ms infinite;
+      }
+      &.preloader-spinner-right {
+        height: 0px;
+        top: 0;
+        right: 0;
+        animation: preloaderSpinnerRight 1000ms 2000ms infinite;
+      }
+      &.preloader-spinner-bottom {
+        width: 0px;
+        bottom: 0;
+        right: 0;
+        animation: preloaderSpinnerBottom 1000ms 3000ms infinite;
+      }
+    }
+  }
+}
+
+@keyframes preloaderSpinnerLeft {
+  0% {
+    height: $preloader-thickness;
+  }
+  100% {
+    height: $preloader-height;
+  }
+}
+
+@keyframes preloaderSpinnerTop {
+  0% {
+    width: $preloader-thickness;
+  }
+  100% {
+    width: $preloader-width;
+  }
+}
+
+@keyframes preloaderSpinnerRight {
+  0% {
+    height: $preloader-thickness;
+  }
+  100% {
+    height: $preloader-height;
+  }
+}
+
+@keyframes preloaderSpinnerBottom {
+  0% {
+    width: $preloader-thickness;
+  }
+  100% {
+    width: $preloader-width;
+  }
+}
