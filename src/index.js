@@ -1,7 +1,6 @@
 // slider
 var App = {
   init: function () {
-    this.preloader()
     this.slider()
     this.mobileMenu()
     this.searchBox()
@@ -133,17 +132,6 @@ var App = {
     })
 
     window.addEventListener('resize', onResize)
-  },
-  preloader () {
-    document.body.classList.add('active-preloader')
-    var onLoad = function () {
-      document.body.classList.add('leaving')
-      setTimeout(function () {
-        document.body.classList.remove('active-preloader')
-        document.body.classList.remove('leaving')
-      }, 500)
-    }
-    window.addEventListener('load', onLoad)
   }
 }
 
